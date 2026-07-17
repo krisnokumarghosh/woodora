@@ -1,4 +1,6 @@
 import Banner from "@/components/homepage/Banner";
+import ShopByRoom from "@/components/homepage/ShopByRoom";
+import TimelessElegance from "@/components/homepage/TimelessElegance";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,6 +11,8 @@ export default function Home() {
   return (
    <div>
     <Banner/>
+    <TimelessElegance/>
+    <ShopByRoom/>
    </div>
   );
 }

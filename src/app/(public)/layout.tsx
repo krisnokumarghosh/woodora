@@ -1,3 +1,4 @@
+import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import { ReactNode } from "react";
 
@@ -8,8 +9,9 @@ type PublicLayoutProps = {
 const PublicLayout = ({ children }: PublicLayoutProps) => {
   return (
     <div>
-        <Navbar/>
+      <Navbar />
       <main>{children}</main>
+      <Footer />
     </div>
   );
 };
