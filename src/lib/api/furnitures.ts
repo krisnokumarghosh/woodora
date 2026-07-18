@@ -1,6 +1,9 @@
 import { serverFetch } from "../core/server";
-import { GetFurnituresParams, PaginatedFurnitureResponse } from "../dataInterface";
-
+import {
+    Furniture,
+  GetFurnituresParams,
+  PaginatedFurnitureResponse,
+} from "../dataInterface";
 
 export const getAllFurnitures = (params: GetFurnituresParams = {}) => {
   const { search, category, page = 1, limit = 12 } = params;
@@ -12,6 +15,11 @@ export const getAllFurnitures = (params: GetFurnituresParams = {}) => {
   query.set("limit", String(limit));
 
   return serverFetch<PaginatedFurnitureResponse>(
-    `/api/furnitures?${query.toString()}`
+    `/api/furnitures?${query.toString()}`,
   );
+};
+
+
+export const getFurnitureById = (id: string) => {
+  return serverFetch<Furniture>(`/api/furniture/${id}`);
 };

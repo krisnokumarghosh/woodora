@@ -13,6 +13,7 @@ export interface Furniture {
   details?: string;
   specification?: FurnitureSpecification;
   category: string;
+  price: number;
 }
 
 export interface PaginatedFurnitureResponse {

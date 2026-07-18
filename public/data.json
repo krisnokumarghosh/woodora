@@ -10,7 +10,8 @@
       "dimensions": "220 x 92 x 84 cm",
       "weight": "48 kg"
     },
-    "category": "Living Room"
+    "category": "Living Room",
+    "price": 400
   },
   {
     "name": "Walnut Coffee Table",
@@ -23,7 +24,8 @@
       "dimensions": "120 x 60 x 45 cm",
       "weight": "19 kg"
     },
-    "category": "Living Room"
+    "category": "Living Room",
+    "price": 180
   },
   {
     "name": "Velvet Accent Chair",
@@ -36,7 +38,8 @@
       "dimensions": "74 x 72 x 85 cm",
       "weight": "15 kg"
     },
-    "category": "Living Room"
+    "category": "Living Room",
+    "price": 200
   },
   {
     "name": "Modern TV Console",
@@ -49,7 +52,8 @@
       "dimensions": "180 x 40 x 55 cm",
       "weight": "35 kg"
     },
-    "category": "Living Room"
+    "category": "Living Room",
+    "price": 300
   },
   {
     "name": "King Platform Bed",
@@ -62,7 +66,8 @@
       "dimensions": "210 x 190 x 105 cm",
       "weight": "62 kg"
     },
-    "category": "Bedroom"
+    "category": "Bedroom",
+    "price": 800
   },
   {
     "name": "Oak Bedside Table",
@@ -75,7 +80,8 @@
       "dimensions": "48 x 40 x 55 cm",
       "weight": "11 kg"
     },
-    "category": "Bedroom"
+    "category": "Bedroom",
+    "price": 250
   },
   {
     "name": "Sliding Door Wardrobe",
@@ -88,7 +94,8 @@
       "dimensions": "200 x 65 x 220 cm",
       "weight": "98 kg"
     },
-    "category": "Bedroom"
+    "category": "Bedroom",
+    "price": 1000
   },
   {
     "name": "Upholstered Bench",
@@ -101,7 +108,8 @@
       "dimensions": "120 x 42 x 48 cm",
       "weight": "14 kg"
     },
-    "category": "Bedroom"
+    "category": "Bedroom",
+    "price": 280
   },
   {
     "name": "Marble Dining Table",
@@ -114,7 +122,8 @@
       "dimensions": "180 x 90 x 76 cm",
       "weight": "72 kg"
     },
-    "category": "Dining Room"
+    "category": "Dining Room",
+    "price": 700
   },
   {
     "name": "Fabric Dining Chair",
@@ -127,9 +136,10 @@
       "dimensions": "48 x 56 x 88 cm",
       "weight": "8 kg"
     },
-    "category": "Dining Room"
+    "category": "Dining Room",
+    "price": 300
   },
-   {
+  {
     "name": "Extendable Dining Table",
     "image": "https://assets.lummi.ai/assets/QmVPfTmz2SPdJGogtpaH4qNeQUimcCpGg5wNkFYbNsVQwV?auto=format&w=1500",
     "description": "A versatile dining table that expands to accommodate extra guests.",
@@ -140,7 +150,8 @@
       "dimensions": "160-220 x 90 x 76 cm",
       "weight": "46 kg"
     },
-    "category": "Dining Room"
+    "category": "Dining Room",
+    "price": 400
   },
   {
     "name": "Sideboard Storage Cabinet",
@@ -153,7 +164,8 @@
       "dimensions": "160 x 45 x 82 cm",
       "weight": "42 kg"
     },
-    "category": "Dining Room"
+    "category": "Dining Room",
+    "price": 150
   },
   {
     "name": "Executive Office Desk",
@@ -166,7 +178,8 @@
       "dimensions": "160 x 75 x 75 cm",
       "weight": "39 kg"
     },
-    "category": "Office Room"
+    "category": "Office Room",
+    "price": 600
   },
   {
     "name": "Ergonomic Office Chair",
@@ -179,7 +192,8 @@
       "dimensions": "68 x 68 x 120 cm",
       "weight": "17 kg"
     },
-    "category": "Office Room"
+    "category": "Office Room",
+    "price": 450
   },
   {
     "name": "Bookshelf Organizer",
@@ -192,7 +206,8 @@
       "dimensions": "80 x 35 x 185 cm",
       "weight": "28 kg"
     },
-    "category": "Office Room"
+    "category": "Office Room",
+    "price": 250
   },
   {
     "name": "Mobile Filing Cabinet",
@@ -205,7 +220,8 @@
       "dimensions": "40 x 50 x 62 cm",
       "weight": "21 kg"
     },
-    "category": "Office Room"
+    "category": "Office Room",
+    "price": 300
   },
   {
     "name": "Kitchen Island Cart",
@@ -218,7 +234,8 @@
       "dimensions": "120 x 60 x 90 cm",
       "weight": "36 kg"
     },
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "price": 400
   },
   {
     "name": "Pantry Storage Cabinet",
@@ -231,7 +248,8 @@
       "dimensions": "90 x 45 x 200 cm",
       "weight": "58 kg"
     },
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "price": 500
   },
   {
     "name": "Breakfast Bar Stool",
@@ -244,7 +262,8 @@
       "dimensions": "46 x 48 x 100 cm",
       "weight": "9 kg"
     },
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "price": 300
   },
   {
     "name": "Kitchen Storage Rack",
@@ -257,6 +276,7 @@
       "dimensions": "90 x 40 x 180 cm",
       "weight": "24 kg"
     },
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "price": 100
   }
 ]

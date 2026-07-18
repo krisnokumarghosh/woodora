@@ -9,7 +9,7 @@ const FurnitureCard = ({ item }: { item: Furniture }) => {
     item.category;
 
   return (
-    <Link href={`/furnitures/${item._id}`} className="group block">
+    <Link href={`/collections/${item._id}`} className="group block">
       <div className="relative aspect-4/5 rounded-md overflow-hidden mb-3 bg-[#DCD2C3]">
         <Image
           src={item.image}
@@ -33,11 +33,14 @@ const FurnitureCard = ({ item }: { item: Furniture }) => {
       <h3 className="text-[14.5px] font-semibold text-[#1A1A1A] leading-snug line-clamp-1">
         {item.name}
       </h3>
+      <p className="text-[13px] font-bold text-[#A0522D] mt-1">
+        ${item.price}
+      </p>
       <p className="text-[12.5px] text-[#1A1A1A]/45 mt-1 line-clamp-2 leading-relaxed">
         {item.description}
       </p>
       {(item.specification?.material || item.specification?.color) && (
-        <p className="text-[10.5px] font-semibold text-[#A0522D]/80 mt-1.5 uppercase tracking-wide">
+        <p className="text-[10.5px] font-semibold text-[#A0522D]/70 mt-1.5 uppercase tracking-wide">
           {[item.specification?.material, item.specification?.color]
             .filter(Boolean)
             .join(" · ")}

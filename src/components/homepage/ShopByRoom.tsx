@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight } from "@gravity-ui/icons";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -13,30 +14,35 @@ const ROOMS = [
     label: "Living Room",
     image:
       "https://assets.lummi.ai/assets/QmY5mH77keJdaK26pfVQpksqGZbMTqq5tMVoTuJywQurJt?auto=format&w=1500",
+    href: "/collections?category=Living+Room",
   },
   {
     id: "02",
     label: "Bedroom",
     image:
       "https://assets.lummi.ai/assets/QmNXAhdJTcgyyw8Cdfhg1M5wyEnXEU6qkWYmH9ws8zYBtT?auto=format&w=1500",
+    href: "/collections?category=Bedroom",
   },
   {
     id: "03",
     label: "Dining Room",
     image:
       "https://assets.lummi.ai/assets/QmbXq8DLDtSXv9ssNFA4HxTUQN9fVPQ593Y6H2Xbdsp5PW?auto=format&w=1500",
+    href: "/collections?category=Dining+Room",
   },
   {
     id: "04",
     label: "Office Room",
     image:
       "https://assets.lummi.ai/assets/QmPkbMnorJX5Nqt6htm3EmSLYiEeMAS2EGDN4V5hqQSWhd?auto=format&w=1500",
+    href: "/collections?category=Office+Room",
   },
   {
     id: "05",
     label: "Kitchen",
     image:
       "https://assets.lummi.ai/assets/QmdUnvNybWq4UAx56LcrnWoBXRegC6h9FmubfMi3LqfDHh?auto=format&w=1500",
+    href: "/collections?category=Kitchen",
   },
 ];
 
@@ -107,7 +113,8 @@ export default function ShopByRoom() {
       {/* List */}
       <ul>
         {ROOMS.map((room) => (
-          <li
+          <Link
+            href={room.href}
             key={room.id}
             onMouseEnter={() => handleEnter(room.image)}
             onMouseLeave={handleLeave}
@@ -124,7 +131,7 @@ export default function ShopByRoom() {
               height={20}
               className="text-[#1A1A1A] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
             />
-          </li>
+          </Link>
         ))}
       </ul>
 

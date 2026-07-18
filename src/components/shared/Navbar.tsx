@@ -6,7 +6,7 @@ import { Avatar, Button } from "@heroui/react";
 import { Bars, ShoppingCart, Xmark } from "@gravity-ui/icons";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "About Us", href: "/about" },
@@ -18,6 +18,12 @@ const NAV_LINKS = [
 export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
@@ -48,7 +54,11 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[14px] font-medium text-[#1A1A1A]/80 transition-colors hover:text-[#1A1A1A]"
+              className={`text-[14px] font-medium  transition-colors   ${
+                isActive(link.href)
+                  ? "text-[#1A1A1A] border-b-2 border-[#A0522D]"
+                  : "text-[#1A1A1A]/80 hover:text-[#1A1A1A]"
+              }`}
             >
               {link.label}
             </Link>
