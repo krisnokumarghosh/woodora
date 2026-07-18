@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "@heroui/react";
-import { Bars, Xmark } from "@gravity-ui/icons";
+import { Avatar, Button } from "@heroui/react";
+import { Bars, ShoppingCart, Xmark } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "About Us", href: "/about" },
@@ -13,6 +15,8 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
   const [open, setOpen] = useState(false);
 
   return (
@@ -45,18 +49,50 @@ export default function Navbar() {
         </nav>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-5 shrink-0">
-          <Link href="/login">
-            <Button className="bg-transparent h-9 px-5 text-[13px] font-semibold rounded-full border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#1A1A1A]/5 transition-colors">
-              Login
-            </Button>
-          </Link>
-          <Link href="/register">
+
+        {isPending ? (
+          <span className="text-[14px] text-[#1A1A1A] font-semibold mr-3">
+            Loading...
+          </span>
+        ) : user ? (
+          <div className="flex items-center gap-4">
+            {user?.image ? (
+              <Image
+                alt=""
+                height={30}
+                width={30}
+                src={user?.image}
+                className="rounded-full h-8.75 w-8.75 object-cover"
+              />
+            ) : (
+              <Avatar>
+                <Avatar.Fallback>
+                  {" "}
+                  {user?.name?.[0]?.toUpperCase() ?? "U"}
+                </Avatar.Fallback>
+              </Avatar>
+            )}
+
+            <ShoppingCart />
+
             <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
-              Register
+              Logout
             </Button>
-          </Link>
-        </div>
+          </div>
+        ) : (
+          <div className="hidden md:flex items-center gap-5 shrink-0">
+            <Link href="/login">
+              <Button className="bg-transparent h-9 px-5 text-[13px] font-semibold rounded-full border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#1A1A1A]/5 transition-colors">
+                Login
+              </Button>
+            </Link>
+            <Link href="/register">
+              <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
+                Register
+              </Button>
+            </Link>
+          </div>
+        )}
 
         {/* Hamburger — mobile only */}
         <Button
@@ -93,18 +129,32 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <div className="flex gap-3 py-5 px-6">
-            <Link href="/login">
-              <Button className="bg-transparent h-9 px-5 text-[13px] font-semibold rounded-full border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#1A1A1A]/5 transition-colors">
-                Login
-              </Button>
-            </Link>
-            <Link href="/register">
+          {isPending ? (
+            <span className="text-[14px] text-[#1A1A1A] font-semibold mr-3">
+              Loading...
+            </span>
+          ) : user ? (
+            <div className="flex gap-3 py-5 px-6">
+              <ShoppingCart />
+
               <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
-                Register
+                Logout
               </Button>
-            </Link>
-          </div>
+            </div>
+          ) : (
+            <div className="flex gap-3 py-5 px-6">
+              <Link href="/login">
+                <Button className="bg-transparent h-9 px-5 text-[13px] font-semibold rounded-full border border-[#1A1A1A]/20 text-[#1A1A1A] hover:bg-[#1A1A1A]/5 transition-colors">
+                  Login
+                </Button>
+              </Link>
+              <Link href="/register">
+                <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
+                  Register
+                </Button>
+              </Link>
+            </div>
+          )}
         </nav>
       )}
     </header>

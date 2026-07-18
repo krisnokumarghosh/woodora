@@ -103,7 +103,7 @@ export default function Banner() {
             src="https://assets.lummi.ai/assets/QmX4sZM5SEiWd32dcgrDJQ2Hq6YiC4FqPpna7Lde1WDLmQ?auto=format&w=1500"
             fill
             sizes="(max-width:1024px) 100vw, 50vw"
-            className="object-cover object-center p-4 md:p-0"
+            className="object-cover object-center p-4"
           />
         </div>
       </div>
