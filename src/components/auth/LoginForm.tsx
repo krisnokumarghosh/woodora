@@ -13,6 +13,7 @@ import {
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import { ArrowUpRight, Eye, EyeSlash } from "@gravity-ui/icons";
+import { errorToast, successToast } from "@/lib/toasts";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -24,28 +25,26 @@ const RegisterForm = () => {
     e.preventDefault();
     setFormError(null);
     setIsLoading(true);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const email = formData.get("email") as string;
+      const pass = formData.get("password") as string;
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const pass = formData.get("password") as string;
-    const image = (formData.get("image") as string) || undefined;
+      const { data, error } = await authClient.signIn.email({
+        email,
+        password: pass,
+      });
 
-    const { error } = await authClient.signUp.email({
-      name,
-      email,
-      password: pass,
-      image,
-    });
-
-    setIsLoading(false);
-
-    if (error) {
-      setFormError(error.message ?? "Something went wrong. Please try again.");
-      return;
+      if (data) {
+        successToast("Login Successfull");
+        router.push("/");
+      } else if (error) {
+        errorToast(error.message ?? "Something went wrong during signup");
+        return;
+      }
+    } finally {
+      setIsLoading(false);
     }
-
-    router.push("/dashboard");
   };
 
   return (
@@ -91,7 +90,8 @@ const RegisterForm = () => {
             <span className="text-[#A0522D]  italic font-normal">again.</span>
           </h1>
           <p className="text-[#F5F0E6]/50 text-[14.5px] mt-6 max-w-75 leading-relaxed">
-          Log in to continue shopping, save your favorite pieces, and track your orders.
+            Log in to continue shopping, save your favorite pieces, and track
+            your orders.
           </p>
         </div>
 
@@ -165,13 +165,11 @@ const RegisterForm = () => {
             Login to your account
           </h2>
           <p className="text-[#1A1A1A]/50 text-[13.5px] mb-9">
-           Log in to continue shopping, save your favorite pieces, and track your orders.
+            Log in to continue shopping, save your favorite pieces, and track
+            your orders.
           </p>
 
           <Form className="flex w-full flex-col gap-6" onSubmit={handleSubmit}>
-            
-          
-
             {/* Email */}
             <TextField
               isRequired
@@ -228,15 +226,10 @@ const RegisterForm = () => {
                   tabIndex={-1}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
-                  {showPassword ? (
-                   <EyeSlash/>
-                  ) : (
-                    <Eye/>
-                  )}
+                  {showPassword ? <EyeSlash /> : <Eye />}
                 </button>
               </div>
 
-           
               <FieldError className="text-[12px] text-[#A0522D] mt-1.5" />
             </TextField>
 
@@ -254,9 +247,7 @@ const RegisterForm = () => {
               className="group w-full h-13 mt-2 rounded-full bg-[#1A1A1A] text-[#F5F0E6] text-[14.5px] font-semibold flex items-center justify-center gap-2 hover:bg-[#A0522D] transition-colors duration-300 disabled:opacity-60"
             >
               {isLoading ? "Logging in..." : "Login"}
-              {!isLoading && (
-                <ArrowUpRight/>
-              )}
+              {!isLoading && <ArrowUpRight />}
             </Button>
           </Form>
 

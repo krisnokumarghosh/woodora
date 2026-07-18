@@ -12,6 +12,7 @@ import {
   Button,
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
+import { errorToast, successToast } from "@/lib/toasts";
 
 const RegisterForm = () => {
   const router = useRouter();
@@ -26,32 +27,35 @@ const RegisterForm = () => {
     { label: "1 number", pass: /[0-9]/.test(password) },
   ];
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError(null);
     setIsLoading(true);
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const pass = formData.get("password") as string;
-    const image = (formData.get("image") as string) || undefined;
+    try {
+      const formData = new FormData(e.currentTarget);
+      const name = formData.get("name") as string;
+      const email = formData.get("email") as string;
+      const pass = formData.get("password") as string;
+      const image = (formData.get("image") as string) || undefined;
 
-    const { error } = await authClient.signUp.email({
-      name,
-      email,
-      password: pass,
-      image,
-    });
+      const { data, error } = await authClient.signUp.email({
+        name,
+        email,
+        password: pass,
+        image,
+      });
 
-    setIsLoading(false);
-
-    if (error) {
-      setFormError(error.message ?? "Something went wrong. Please try again.");
-      return;
+      if (data) {
+        successToast("Registration Successfull");
+        router.push("/");
+      } else if (error) {
+        errorToast(error.message ?? "Something went wrong during signup");
+        return;
+      }
+    } finally {
+      setIsLoading(false);
     }
-
-    router.push("/dashboard");
   };
 
   return (
@@ -71,7 +75,13 @@ const RegisterForm = () => {
 
         {/* brand mark */}
         <Link href="/" className="relative z-10 flex items-center gap-2 w-fit">
-          <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#A0522D]" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            viewBox="0 0 24 24"
+            className="w-5 h-5 text-[#A0522D]"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M6 18v3M18 18v3M4 12v6h16v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2ZM6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" />
           </svg>
           <span className="text-[#F5F0E6] font-bold tracking-[0.2em] text-[13px] uppercase">
@@ -86,8 +96,7 @@ const RegisterForm = () => {
           </p>
           <h1 className="text-[#F5F0E6] font-black text-[58px] leading-[0.94] tracking-tight">
             Pull up
-            <br />
-            a{" "}
+            <br />a{" "}
             <span className="text-[#A0522D] font-serif italic font-normal">
               seat.
             </span>
@@ -126,7 +135,13 @@ const RegisterForm = () => {
                 </textPath>
               </text>
             </svg>
-            <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#C9A876] absolute inset-0 m-auto" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              className="w-5 h-5 text-[#C9A876] absolute inset-0 m-auto"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M6 18v3M18 18v3M4 12v6h16v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2ZM6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" />
             </svg>
           </div>
@@ -141,7 +156,13 @@ const RegisterForm = () => {
         <div className="w-full max-w-95">
           {/* mobile brand mark */}
           <div className="lg:hidden flex items-center gap-2 mb-10 justify-center">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#A0522D]" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              viewBox="0 0 24 24"
+              className="w-5 h-5 text-[#A0522D]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M6 18v3M18 18v3M4 12v6h16v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2ZM6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3" />
             </svg>
             <span className="text-[#1A1A1A] font-bold tracking-[0.2em] text-[13px] uppercase">
@@ -230,11 +251,23 @@ const RegisterForm = () => {
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
-                    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 8 10 8a13.16 13.16 0 0 1-1.67 2.68M6.61 6.61C2.9 8.9 1 12 1 12s3 8 11 8a9.26 9.26 0 0 0 5.39-1.61M14.12 14.12a3 3 0 1 1-4.24-4.24M1 1l22 22" />
                     </svg>
                   ) : (
-                    <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z" />
                       <circle cx="12" cy="12" r="3" />
                     </svg>
@@ -257,12 +290,22 @@ const RegisterForm = () => {
                       }`}
                     >
                       {c.pass && (
-                        <svg viewBox="0 0 24 24" className="w-2.5 h-2.5 text-[#F5F0E6]" fill="none" stroke="currentColor" strokeWidth="3">
+                        <svg
+                          viewBox="0 0 24 24"
+                          className="w-2.5 h-2.5 text-[#F5F0E6]"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                        >
                           <path d="M20 6 9 17l-5-5" />
                         </svg>
                       )}
                     </span>
-                    <span className={c.pass ? "text-[#1A1A1A]/70" : "text-[#1A1A1A]/40"}>
+                    <span
+                      className={
+                        c.pass ? "text-[#1A1A1A]/70" : "text-[#1A1A1A]/40"
+                      }
+                    >
                       {c.label}
                     </span>
                   </div>
@@ -286,7 +329,13 @@ const RegisterForm = () => {
             >
               {isLoading ? "Creating account..." : "Create Account"}
               {!isLoading && (
-                <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <path d="M7 17 17 7M7 7h10v10" />
                 </svg>
               )}

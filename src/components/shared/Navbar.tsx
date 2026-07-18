@@ -6,6 +6,7 @@ import { Avatar, Button } from "@heroui/react";
 import { Bars, ShoppingCart, Xmark } from "@gravity-ui/icons";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "About Us", href: "/about" },
@@ -18,6 +19,12 @@ export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleLogOut = async () => {
+    await authClient.signOut();
+    router.push("/");
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#F5F0E6] border-b border-[#1A1A1A]/10">
@@ -55,7 +62,7 @@ export default function Navbar() {
             Loading...
           </span>
         ) : user ? (
-          <div className="flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-5">
             {user?.image ? (
               <Image
                 alt=""
@@ -66,16 +73,20 @@ export default function Navbar() {
               />
             ) : (
               <Avatar>
-                <Avatar.Fallback>
+                <Avatar.Fallback className="bg-[#1A1A1A] text-[#F5F0E6]">
                   {" "}
                   {user?.name?.[0]?.toUpperCase() ?? "U"}
                 </Avatar.Fallback>
               </Avatar>
             )}
+            <div className="border border-[#1A1A1A] p-3 rounded-full">
+              <ShoppingCart />
+            </div>
 
-            <ShoppingCart />
-
-            <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
+            <Button
+              onClick={handleLogOut}
+              className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors"
+            >
               Logout
             </Button>
           </div>
@@ -134,10 +145,15 @@ export default function Navbar() {
               Loading...
             </span>
           ) : user ? (
-            <div className="flex gap-3 py-5 px-6">
-              <ShoppingCart />
+            <div className="flex items-center gap-5 py-5 px-6">
+              <div className="border border-[#1A1A1A] p-3 rounded-full">
+                <ShoppingCart />
+              </div>
 
-              <Button className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors">
+              <Button
+                onClick={handleLogOut}
+                className="h-9 px-5 text-[13px] font-semibold rounded-full bg-[#1A1A1A] text-[#F5F0E6] hover:bg-[#1A1A1A]/90 transition-colors"
+              >
                 Logout
               </Button>
             </div>

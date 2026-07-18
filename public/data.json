@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Nordic Linen Sofa",
+    "image": "https://assets.lummi.ai/assets/QmeCatSHG43Uhs6kqZcABsP8Uh3Bb7Mh42P9rtUqLrigaK?auto=format&w=1500",
+    "description": "A minimalist three-seater sofa designed for modern living rooms.",
+    "details": "The Nordic Linen Sofa blends Scandinavian aesthetics with exceptional comfort. Upholstered in premium linen fabric with high-density foam cushions, it provides excellent support for everyday relaxation. Its solid oak legs and clean silhouette make it a timeless centerpiece for any contemporary home.",
+    "specification": {
+      "material": "Premium Linen, Solid Oak Wood",
+      "color": "Light Gray",
+      "dimensions": "220 x 92 x 84 cm",
+      "weight": "48 kg"
+    },
+    "category": "Living Room"
+  },
+  {
+    "name": "Walnut Coffee Table",
+    "image": "https://assets.lummi.ai/assets/Qmcv73RJ617N2Urzs7SasrPssU9HfHM2x5xti8ncZYaJL6?auto=format&w=1500",
+    "description": "Elegant wooden coffee table with spacious storage shelf.",
+    "details": "Crafted from premium walnut wood, this coffee table combines style with practicality. The wide tabletop is perfect for books, drinks, and decorative pieces, while the lower shelf provides additional storage for magazines or baskets.",
+    "specification": {
+      "material": "Walnut Wood",
+      "color": "Walnut Brown",
+      "dimensions": "120 x 60 x 45 cm",
+      "weight": "19 kg"
+    },
+    "category": "Living Room"
+  },
+  {
+    "name": "Velvet Accent Chair",
+    "image": "https://assets.lummi.ai/assets/QmYfaFHrpDP3i56k4wYYqktkE55K7eir4kQB2R3Zo9aKB6?auto=format&w=1500",
+    "description": "Luxury velvet chair perfect for reading corners.",
+    "details": "Designed with soft velvet upholstery and a curved ergonomic backrest, this accent chair offers superior comfort while adding sophistication to your living room. Gold-finished metal legs provide a premium modern touch.",
+    "specification": {
+      "material": "Velvet Fabric, Steel",
+      "color": "Emerald Green",
+      "dimensions": "74 x 72 x 85 cm",
+      "weight": "15 kg"
+    },
+    "category": "Living Room"
+  },
+  {
+    "name": "Modern TV Console",
+    "image": "https://assets.lummi.ai/assets/QmP1vnUhgCGrMMQq5LJBos1Xx6YySUr7dRSmN8W7tmVGHN?auto=format&w=1500",
+    "description": "Contemporary entertainment unit with hidden storage.",
+    "details": "Featuring spacious cabinets and open shelving, this TV console keeps your entertainment area organized while maintaining a clean modern appearance. Durable engineered wood construction ensures long-lasting use.",
+    "specification": {
+      "material": "Engineered Wood",
+      "color": "Matte White",
+      "dimensions": "180 x 40 x 55 cm",
+      "weight": "35 kg"
+    },
+    "category": "Living Room"
+  },
+  {
+    "name": "King Platform Bed",
+    "image": "https://assets.lummi.ai/assets/QmNaNAGfWGTQkMoSCkqrudagynEgnsmrhzxHor4sCi6eQW?auto=format&w=1500",
+    "description": "Modern platform bed with premium wooden finish.",
+    "details": "The King Platform Bed features a sturdy hardwood frame and a minimalist headboard that complements both modern and classic interiors. Its elevated design provides additional under-bed storage while ensuring excellent mattress support.",
+    "specification": {
+      "material": "Solid Oak Wood",
+      "color": "Natural Oak",
+      "dimensions": "210 x 190 x 105 cm",
+      "weight": "62 kg"
+    },
+    "category": "Bedroom"
+  },
+  {
+    "name": "Oak Bedside Table",
+    "image": "https://assets.lummi.ai/assets/QmQNB1JTWAUnhWLdfTzMTQW4PGcPsNgQGMoZrnbfyFA44i?auto=format&w=1500",
+    "description": "Compact bedside table with two smooth drawers.",
+    "details": "Made from premium oak wood, this bedside table offers practical storage for books, chargers, and nighttime essentials. Its minimalist design fits seamlessly into modern bedrooms.",
+    "specification": {
+      "material": "Solid Oak Wood",
+      "color": "Natural Oak",
+      "dimensions": "48 x 40 x 55 cm",
+      "weight": "11 kg"
+    },
+    "category": "Bedroom"
+  },
+  {
+    "name": "Sliding Door Wardrobe",
+    "image": "https://assets.lummi.ai/assets/QmdUnaC9DrxRuV7g5LWaPD444qV5QGnpHJvJ7TMVcQ7jTU?auto=format&w=1500",
+    "description": "Large wardrobe with smooth sliding doors and shelves.",
+    "details": "Designed for modern bedrooms, this spacious wardrobe provides hanging space, adjustable shelving, and multiple storage compartments. The sliding door mechanism saves space while adding a premium look.",
+    "specification": {
+      "material": "Engineered Wood",
+      "color": "Matte White",
+      "dimensions": "200 x 65 x 220 cm",
+      "weight": "98 kg"
+    },
+    "category": "Bedroom"
+  },
+  {
+    "name": "Upholstered Bench",
+    "image": "https://assets.lummi.ai/assets/QmTTNE5Yh4nZEsDyf11wiKaQ1oCgpfUSi6P3eeHizD3WDU?auto=format&w=1500",
+    "description": "Soft upholstered bench for bedroom seating.",
+    "details": "Perfect for placing at the foot of your bed, this upholstered bench offers comfortable seating while enhancing the room's elegance. The premium fabric and wooden frame ensure durability and timeless appeal.",
+    "specification": {
+      "material": "Fabric, Solid Wood",
+      "color": "Beige",
+      "dimensions": "120 x 42 x 48 cm",
+      "weight": "14 kg"
+    },
+    "category": "Bedroom"
+  },
+  {
+    "name": "Marble Dining Table",
+    "image": "https://assets.lummi.ai/assets/QmcnAWdniZNa8DSN9yMH8Lkn6fwxy1JuCKz5DU3pd9NuUK?auto=format&w=1500",
+    "description": "Premium marble dining table for six people.",
+    "details": "Featuring a luxurious marble top supported by a sturdy steel base, this dining table creates a sophisticated dining experience. The scratch-resistant surface is both elegant and practical for daily use.",
+    "specification": {
+      "material": "Marble, Steel",
+      "color": "White Marble",
+      "dimensions": "180 x 90 x 76 cm",
+      "weight": "72 kg"
+    },
+    "category": "Dining Room"
+  },
+  {
+    "name": "Fabric Dining Chair",
+    "image": "https://assets.lummi.ai/assets/QmcUBCPBZu71adULLJkZ1mZcMFQRAtg8wXK1Mitkj3Qxy1?auto=format&w=1500",
+    "description": "Comfortable upholstered dining chair with wooden legs.",
+    "details": "This dining chair combines ergonomic support with elegant styling. The padded seat and curved backrest provide exceptional comfort during meals, while solid beech wood legs ensure stability and durability.",
+    "specification": {
+      "material": "Fabric, Beech Wood",
+      "color": "Charcoal Gray",
+      "dimensions": "48 x 56 x 88 cm",
+      "weight": "8 kg"
+    },
+    "category": "Dining Room"
+  },
+   {
+    "name": "Extendable Dining Table",
+    "image": "https://assets.lummi.ai/assets/QmVPfTmz2SPdJGogtpaH4qNeQUimcCpGg5wNkFYbNsVQwV?auto=format&w=1500",
+    "description": "A versatile dining table that expands to accommodate extra guests.",
+    "details": "Designed for growing families and entertaining guests, this extendable dining table features a smooth extension mechanism that transforms it from a compact everyday table into a spacious dining centerpiece. Crafted from premium engineered oak with a scratch-resistant finish, it offers durability while maintaining a warm, modern appearance.",
+    "specification": {
+      "material": "Engineered Oak Wood",
+      "color": "Oak Brown",
+      "dimensions": "160-220 x 90 x 76 cm",
+      "weight": "46 kg"
+    },
+    "category": "Dining Room"
+  },
+  {
+    "name": "Sideboard Storage Cabinet",
+    "image": "https://assets.lummi.ai/assets/QmPZC4LAkNA4MSZCaeS1RL9GeATajoL6LPHQWSXkhyaJuY?auto=format&w=1500",
+    "description": "Modern storage cabinet for dining essentials.",
+    "details": "This elegant sideboard features spacious cabinets and drawers for storing dinnerware, glassware, and table linens. Its minimalist design blends seamlessly into modern dining rooms while providing generous storage capacity.",
+    "specification": {
+      "material": "Engineered Wood",
+      "color": "Matte Black",
+      "dimensions": "160 x 45 x 82 cm",
+      "weight": "42 kg"
+    },
+    "category": "Dining Room"
+  },
+  {
+    "name": "Executive Office Desk",
+    "image": "https://assets.lummi.ai/assets/QmbC3Z6ZX1Vsf5xDhicQDuob77wrNyjutQp8J8FG2emcbz?auto=format&w=1500",
+    "description": "Spacious executive desk with cable management.",
+    "details": "Designed for productivity, this executive office desk offers a large work surface, integrated cable routing, and durable construction. Its contemporary appearance fits perfectly into home offices and professional workspaces.",
+    "specification": {
+      "material": "Engineered Wood, Steel",
+      "color": "Walnut Brown",
+      "dimensions": "160 x 75 x 75 cm",
+      "weight": "39 kg"
+    },
+    "category": "Office Room"
+  },
+  {
+    "name": "Ergonomic Office Chair",
+    "image": "https://assets.lummi.ai/assets/Qmc3MXfMs67Yb4vSuNQ6Ep6kv9h5f74ChqE1V4vzi8Hbfg?auto=format&w=1500",
+    "description": "Comfortable ergonomic chair for long working hours.",
+    "details": "Featuring breathable mesh, adjustable lumbar support, and a reclining mechanism, this office chair promotes proper posture while maximizing comfort throughout the workday.",
+    "specification": {
+      "material": "Mesh Fabric, Steel, Plastic",
+      "color": "Black",
+      "dimensions": "68 x 68 x 120 cm",
+      "weight": "17 kg"
+    },
+    "category": "Office Room"
+  },
+  {
+    "name": "Bookshelf Organizer",
+    "image": "https://assets.lummi.ai/assets/QmXq8qYbRdLPACWrtLEKZ4JxUmLEgGE4pSsb3Ki4GMM4aa?auto=format&w=1500",
+    "description": "Modern open bookshelf with multiple storage shelves.",
+    "details": "Perfect for organizing books, decorative accessories, and office supplies, this bookshelf features a durable wooden frame with open shelving that complements minimalist and contemporary interiors.",
+    "specification": {
+      "material": "Engineered Wood",
+      "color": "White Oak",
+      "dimensions": "80 x 35 x 185 cm",
+      "weight": "28 kg"
+    },
+    "category": "Office Room"
+  },
+  {
+    "name": "Mobile Filing Cabinet",
+    "image": "https://assets.lummi.ai/assets/QmXttuHUdGTcVzuSEV33EuCNECrrHNyfSL6Xmq3omtnf9G?auto=format&w=1500",
+    "description": "Compact rolling cabinet for documents and office storage.",
+    "details": "This lockable filing cabinet includes spacious drawers for organizing files, stationery, and office essentials. Smooth caster wheels allow effortless movement around your workspace.",
+    "specification": {
+      "material": "Steel",
+      "color": "Graphite Gray",
+      "dimensions": "40 x 50 x 62 cm",
+      "weight": "21 kg"
+    },
+    "category": "Office Room"
+  },
+  {
+    "name": "Kitchen Island Cart",
+    "image": "https://assets.lummi.ai/assets/QmSnxcTiu3qnxLMwpnn4rDfsZVd5nyN2FFFdFSg5EiaZc7?auto=format&w=1500",
+    "description": "Multi-purpose kitchen island with storage and wheels.",
+    "details": "Designed to maximize kitchen functionality, this rolling island features drawers, shelves, and a spacious countertop for meal preparation. Lockable wheels allow easy mobility while ensuring stability during use.",
+    "specification": {
+      "material": "Solid Wood, Engineered Wood",
+      "color": "White",
+      "dimensions": "120 x 60 x 90 cm",
+      "weight": "36 kg"
+    },
+    "category": "Kitchen"
+  },
+  {
+    "name": "Pantry Storage Cabinet",
+    "image": "https://assets.lummi.ai/assets/QmRA4BsKopeCgjYSN9wihBGheKjQWhE6SLrr6P98G3aRts?auto=format&w=1500",
+    "description": "Tall kitchen cabinet with adjustable shelving.",
+    "details": "Keep your kitchen organized with this spacious pantry cabinet. Adjustable shelves accommodate food items, cookware, and small appliances while maintaining a clean and clutter-free appearance.",
+    "specification": {
+      "material": "Engineered Wood",
+      "color": "Cream White",
+      "dimensions": "90 x 45 x 200 cm",
+      "weight": "58 kg"
+    },
+    "category": "Kitchen"
+  },
+  {
+    "name": "Breakfast Bar Stool",
+    "image": "https://assets.lummi.ai/assets/QmXeqwNVUiEiFgDLgEKT1Cs7takY4rmwWXYZW1UGmS1RG1?auto=format&w=1500",
+    "description": "Modern counter-height stool with cushioned seating.",
+    "details": "Ideal for kitchen islands and breakfast counters, this bar stool features a padded seat, ergonomic backrest, and sturdy metal frame for comfortable everyday seating.",
+    "specification": {
+      "material": "PU Leather, Steel",
+      "color": "Black",
+      "dimensions": "46 x 48 x 100 cm",
+      "weight": "9 kg"
+    },
+    "category": "Kitchen"
+  },
+  {
+    "name": "Kitchen Storage Rack",
+    "image": "https://assets.lummi.ai/assets/Qmbgyaide8uCB6bhTmRfdVRw9FuaJyW8BFRrotMF7ZGdCw?auto=format&w=1500",
+    "description": "Open shelving unit for organizing cookware and essentials.",
+    "details": "This industrial-style kitchen rack provides multiple shelves for storing cookware, spices, and decorative accessories. Its sturdy steel frame and wooden shelves offer both durability and modern aesthetics.",
+    "specification": {
+      "material": "Steel, Engineered Wood",
+      "color": "Rustic Brown",
+      "dimensions": "90 x 40 x 180 cm",
+      "weight": "24 kg"
+    },
+    "category": "Kitchen"
+  }
+]
