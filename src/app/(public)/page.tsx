@@ -1,4 +1,5 @@
 import Banner from "@/components/homepage/Banner";
+import FaqSection from "@/components/homepage/FaqSection";
 import RecommendedProducts from "@/components/homepage/RecommendedProducts";
 import ShopByRoom from "@/components/homepage/ShopByRoom";
 import TimelessElegance from "@/components/homepage/TimelessElegance";
@@ -15,6 +16,7 @@ export default function Home() {
     <TimelessElegance/>
     <ShopByRoom/>
     <RecommendedProducts/>
+    <FaqSection/>
    </div>
   );
 }

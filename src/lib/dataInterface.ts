@@ -5,6 +5,7 @@ export interface FurnitureSpecification {
   weight?: string;
 }
 
+
 export interface Furniture {
   _id: string;
   name: string;
@@ -31,7 +32,7 @@ export interface GetFurnituresParams {
   limit?: number;
 }
 
-export interface AddCartResponse {
+export interface AddingResponse {
   acknowledged: boolean;
   insertedId: string;
 }
@@ -39,7 +40,54 @@ export interface AddCartResponse {
 export interface AddToCartPayload {
   userId: string;
   productId: string;
+}
+
+export interface DeleteCartResponse {
+  acknowledged: boolean;
+  deletedCount: number;
+}
+
+export interface Cart {
+  _id: string;
+  userId: string;
+  productId: string;
+  createdAt?: string;
+}
+
+export interface CartItemWithFurniture extends Cart {
   quantity: number;
+  furniture: Furniture;
+}
+
+export interface OrderItem {
+  furnitureId: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+export interface OrderPayload {
+  userId: string;
+  items: OrderItem[];
+  subtotal: number;
+}
+
+export interface OrderItem {
+  furnitureId: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
+export interface Order {
+  _id: string;
+  userId: string;
+  items: OrderItem[];
+  subtotal: number;
+  status?: "pending" | "paid" | "shipped" | "delivered";
+  createdAt: string;
 }
 
 // values match the exact `category` strings stored in the DB (Title Case)

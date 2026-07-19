@@ -1,23 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Avatar, Badge, Button } from "@heroui/react";
 import { Bars, ShoppingCart, Xmark } from "@gravity-ui/icons";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { getCartByUserId } from "@/lib/api/cart";
+import { CART_UPDATED_EVENT } from "@/lib/cart-events";
 
 const NAV_LINKS = [
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Our Collections", href: "/collections" },
-  { label: "Design Inspiration", href: "/design-inspiration" },
-  { label: "Our Projects", href: "/projects" },
+  { label: "Orders", href: "/orders" },
+  { label: "Terms", href: "/terms" },
 ];
 
 export default function Navbar() {
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+  const [cartLength, setCartLength] = useState(0);
+
+  useEffect(() => {
+    const fetchCart = async () => {
+      if (!user?.id) return;
+
+      const cart = await getCartByUserId(user.id);
+      setCartLength(cart.length);
+    };
+
+    fetchCart();
+    window.addEventListener(CART_UPDATED_EVENT, fetchCart);
+    return () => window.removeEventListener(CART_UPDATED_EVENT, fetchCart);
+  }, [user?.id]);
 
   const pathname = usePathname();
 
@@ -90,17 +106,19 @@ export default function Navbar() {
               </Avatar>
             )}
 
-             <Badge.Anchor>
-                <Link
-                  href={"/cart"}
-                  className="border border-[#1A1A1A] p-3 rounded-full"
-                >
-                  <ShoppingCart />
-                </Link>
+            <Badge.Anchor>
+              <Link
+                href={"/cart"}
+                className="border border-[#1A1A1A] p-3 rounded-full"
+              >
+                <ShoppingCart />
+              </Link>
+              {cartLength > 0 && (
                 <Badge size="sm" className="bg-[#A0522D] text-[#F5F0E6]">
-                  5
+                  {cartLength}
                 </Badge>
-              </Badge.Anchor>
+              )}
+            </Badge.Anchor>
 
             <Button
               onClick={handleLogOut}
@@ -172,9 +190,11 @@ export default function Navbar() {
                 >
                   <ShoppingCart />
                 </Link>
-                <Badge size="sm" className="bg-[#A0522D] text-[#F5F0E6]">
-                  5
-                </Badge>
+                {cartLength > 0 && (
+                  <Badge size="sm" className="bg-[#A0522D] text-[#F5F0E6]">
+                    {cartLength}
+                  </Badge>
+                )}
               </Badge.Anchor>
 
               <Button
