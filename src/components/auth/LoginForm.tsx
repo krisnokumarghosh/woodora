@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Form,
   TextField,
@@ -17,6 +17,8 @@ import { errorToast, successToast } from "@/lib/toasts";
 
 const RegisterForm = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirect") || "/";
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -37,7 +39,7 @@ const RegisterForm = () => {
 
       if (data) {
         successToast("Login Successfull");
-        router.push("/");
+        router.push(redirectTo);
       } else if (error) {
         errorToast(error.message ?? "Something went wrong during signup");
         return;
@@ -173,6 +175,7 @@ const RegisterForm = () => {
             {/* Email */}
             <TextField
               isRequired
+              defaultValue="huge@gmail.com"
               name="email"
               type="email"
               validate={(value) => {
@@ -195,6 +198,7 @@ const RegisterForm = () => {
             {/* Password */}
             <TextField
               isRequired
+              defaultValue="Huge@123"
               minLength={8}
               name="password"
               type={showPassword ? "text" : "password"}
@@ -254,7 +258,7 @@ const RegisterForm = () => {
           <p className="text-center text-[13px] text-[#1A1A1A]/55 mt-8">
             Don&apos;t have an account?{" "}
             <Link
-              href="/register"
+              href={`/register?redirect=${redirectTo}`}
               className="font-bold text-[#1A1A1A] underline underline-offset-4 decoration-[#A0522D] decoration-2 hover:text-[#A0522D] transition-colors"
             >
               Register

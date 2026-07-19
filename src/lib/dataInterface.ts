@@ -31,6 +31,17 @@ export interface GetFurnituresParams {
   limit?: number;
 }
 
+export interface AddCartResponse {
+  acknowledged: boolean;
+  insertedId: string;
+}
+
+export interface AddToCartPayload {
+  userId: string;
+  productId: string;
+  quantity: number;
+}
+
 // values match the exact `category` strings stored in the DB (Title Case)
 export const FURNITURE_CATEGORIES: { label: string; value: string }[] = [
   { label: "All", value: "all" },

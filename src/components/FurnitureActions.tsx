@@ -1,21 +1,50 @@
 "use client";
 
+import { addToCart } from "@/lib/actions/cart";
+import { authClient } from "@/lib/auth-client";
 import { Furniture } from "@/lib/dataInterface";
+import { errorToast, successToast } from "@/lib/toasts";
 import { Minus, Plus, ShoppingCart, Thunderbolt } from "@gravity-ui/icons";
 import { Button } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const FurnitureActions = ({ furniture }: { furniture: Furniture }) => {
   const [qty, setQty] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
   const [isBuying, setIsBuying] = useState(false);
+  console.log(furniture);
+
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+  const router = useRouter();
 
   const handleAddToCart = async () => {
+    if (!user) {
+      return router.push(`/login?redirect=collections/${furniture._id}`);
+    }
     setIsAdding(true);
-    // TODO: wire this up to your actual cart logic (context, API call, etc.)
-    // e.g. await addToCart({ furnitureId: furniture._id, quantity: qty });
-    await new Promise((r) => setTimeout(r, 600));
-    setIsAdding(false);
+
+    try {
+      const data = {
+        userId: user?.id,
+        productId: furniture._id,
+        quantity: qty,
+      };
+
+      const result = await addToCart(data);
+      if (result.insertedId) {
+        successToast("Added to cart");
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        errorToast(err.message);
+      } else {
+        errorToast("Something went wrong");
+      }
+    } finally {
+      setIsAdding(false);
+    }
   };
 
   const handleBuyNow = async () => {

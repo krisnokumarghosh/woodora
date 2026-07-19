@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Avatar, Button } from "@heroui/react";
+import { Avatar, Badge, Button } from "@heroui/react";
 import { Bars, ShoppingCart, Xmark } from "@gravity-ui/icons";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
@@ -89,9 +89,18 @@ export default function Navbar() {
                 </Avatar.Fallback>
               </Avatar>
             )}
-            <div className="border border-[#1A1A1A] p-3 rounded-full">
-              <ShoppingCart />
-            </div>
+
+             <Badge.Anchor>
+                <Link
+                  href={"/cart"}
+                  className="border border-[#1A1A1A] p-3 rounded-full"
+                >
+                  <ShoppingCart />
+                </Link>
+                <Badge size="sm" className="bg-[#A0522D] text-[#F5F0E6]">
+                  5
+                </Badge>
+              </Badge.Anchor>
 
             <Button
               onClick={handleLogOut}
@@ -156,9 +165,17 @@ export default function Navbar() {
             </span>
           ) : user ? (
             <div className="flex items-center gap-5 py-5 px-6">
-              <div className="border border-[#1A1A1A] p-3 rounded-full">
-                <ShoppingCart />
-              </div>
+              <Badge.Anchor>
+                <Link
+                  href={"/cart"}
+                  className="border border-[#1A1A1A] p-3 rounded-full"
+                >
+                  <ShoppingCart />
+                </Link>
+                <Badge size="sm" className="bg-[#A0522D] text-[#F5F0E6]">
+                  5
+                </Badge>
+              </Badge.Anchor>
 
               <Button
                 onClick={handleLogOut}

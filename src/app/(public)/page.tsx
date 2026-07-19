@@ -1,4 +1,5 @@
 import Banner from "@/components/homepage/Banner";
+import RecommendedProducts from "@/components/homepage/RecommendedProducts";
 import ShopByRoom from "@/components/homepage/ShopByRoom";
 import TimelessElegance from "@/components/homepage/TimelessElegance";
 import { Metadata } from "next";
@@ -13,6 +14,7 @@ export default function Home() {
     <Banner/>
     <TimelessElegance/>
     <ShopByRoom/>
+    <RecommendedProducts/>
    </div>
   );
 }
