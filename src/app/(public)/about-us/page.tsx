@@ -114,7 +114,7 @@ const AboutUsPage = () => {
               <p className="font-heading font-extrabold text-[#F5F0E6] text-[7vw] sm:text-[4vw] lg:text-[2.4vw] tracking-[-0.02em]">
                 {stat.number}
               </p>
-              <p className="text-[12px] uppercase tracking-[0.1em] text-[#F5F0E6]/50 mt-2">
+              <p className="text-[12px] uppercase tracking-widest text-[#F5F0E6]/50 mt-2">
                 {stat.label}
               </p>
             </div>
@@ -125,7 +125,7 @@ const AboutUsPage = () => {
       {/* CRAFTSMANSHIP SPLIT */}
       <section className="border-b border-[#1A1A1A]/10">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative min-h-[320px] lg:min-h-[460px] bg-[#C9A876]/10 lg:border-r border-[#1A1A1A]/10">
+          <div className="relative min-h-80 lg:min-h-115 bg-[#C9A876]/10 lg:border-r border-[#1A1A1A]/10">
             <Image
               src="https://assets.lummi.ai/assets/QmavjzgcuPbimPiKkwQd4d2ZfvECGD4yKFfBsC36rk3ZHs?auto=format&w=1500"
               alt="Craftsmanship detail"
@@ -139,7 +139,7 @@ const AboutUsPage = () => {
             <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#A0522D] mb-4">
               Our Process
             </p>
-            <h2 className="font-heading font-extrabold text-[#1A1A1A] leading-[1] tracking-[-0.02em] text-[8vw] sm:text-[5vw] lg:text-[2.8vw] mb-5">
+            <h2 className="font-heading font-extrabold text-[#1A1A1A] leading-none tracking-[-0.02em] text-[8vw] sm:text-[5vw] lg:text-[2.8vw] mb-5">
               Built By Hand,
               <br />
               Designed To Last

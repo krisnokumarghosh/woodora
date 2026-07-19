@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { Plus, ArrowUpRight } from "lucide-react";
+import { Plus } from "lucide-react";
 
 const FAQS = [
   {
@@ -112,7 +111,7 @@ const FaqSection = () => {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-[13.5px] md:text-[14px] leading-relaxed text-[#1A1A1A]/65 pl-10 md:pl-[76px] pr-6 md:pr-12 pb-6 max-w-lg">
+                    <p className="text-[13.5px] md:text-[14px] leading-relaxed text-[#1A1A1A]/65 pl-10 md:pl-19 pr-6 md:pr-12 pb-6 max-w-lg">
                       {faq.answer}
                     </p>
                   </div>

@@ -28,7 +28,7 @@ const OrderCard = ({ order }: Props) => {
             />
           </div>
           <div>
-            <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#1A1A1A]/40">
+            <p className="text-[11px] font-bold tracking-widest uppercase text-[#1A1A1A]/40">
               Order
             </p>
             <p className="text-[12.5px] font-mono text-[#1A1A1A]/70">

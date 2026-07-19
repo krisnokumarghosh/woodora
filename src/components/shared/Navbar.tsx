@@ -11,10 +11,10 @@ import { getCartByUserId } from "@/lib/api/cart";
 import { CART_UPDATED_EVENT } from "@/lib/cart-events";
 
 const NAV_LINKS = [
-  { label: "About Us", href: "/about-us" },
-  { label: "Our Collections", href: "/collections" },
-  { label: "Orders", href: "/orders" },
-  { label: "Terms", href: "/terms" },
+  { label: "About Us", href: "/about-us", authRequired: false },
+  { label: "Our Collections", href: "/collections", authRequired: false },
+  { label: "Orders", href: "/orders", authRequired: true },
+  { label: "Terms", href: "/terms", authRequired: false },
 ];
 
 export default function Navbar() {
@@ -48,6 +48,10 @@ export default function Navbar() {
     router.push("/");
   };
 
+  const visibleNavLinks = NAV_LINKS.filter(
+    (link) => !link.authRequired || !!user,
+  );
+
   return (
     <header className="sticky top-0 z-50 w-full bg-[#F5F0E6] border-b border-[#1A1A1A]/10">
       <div className="flex h-16 items-center justify-between px-6 md:px-10 lg:px-14">
@@ -66,7 +70,7 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-10 lg:gap-12"
           aria-label="Main navigation"
         >
-          {NAV_LINKS.map((link) => (
+          {visibleNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -166,7 +170,7 @@ export default function Navbar() {
           className="flex flex-col border-t border-[#1A1A1A]/10 bg-[#F5F0E6]"
           aria-label="Mobile navigation"
         >
-          {NAV_LINKS.map((link) => (
+          {visibleNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

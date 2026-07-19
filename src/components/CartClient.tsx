@@ -27,7 +27,7 @@ const CartClient = ({ initialItems }: Props) => {
   const [items, setItems] = useState(initialItems);
   const [removingId, setRemovingId] = useState<string | null>(null);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  const { data: session, isPending } = authClient.useSession();
+  const { data: session } = authClient.useSession();
   const user = session?.user;
 
   const subtotal = useMemo(
