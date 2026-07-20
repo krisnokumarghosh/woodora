@@ -13,11 +13,12 @@ import {
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 import { errorToast, successToast } from "@/lib/toasts";
+import { FcGoogle } from "react-icons/fc";
 
 const RegisterForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
-    const redirectTo = searchParams.get("redirect") || "/";
+  const redirectTo = searchParams.get("redirect") || "/";
   const [isLoading, setIsLoading] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [password, setPassword] = useState("");
@@ -58,6 +59,12 @@ const RegisterForm = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleGoogleSignup = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -181,6 +188,24 @@ const RegisterForm = () => {
           <p className="text-[#1A1A1A]/50 text-[13.5px] mb-9">
             Join Woodora and start shopping curated furniture today.
           </p>
+
+          <button
+            type="button"
+            onClick={handleGoogleSignup}
+            className="w-full h-12 rounded-full border-2 border-[#1A1A1A]/15 text-[#1A1A1A] text-[13.5px] font-semibold flex items-center justify-center gap-2.5 hover:border-[#1A1A1A]/40 hover:bg-white/50 transition-colors duration-300 disabled:opacity-60"
+          >
+            <FcGoogle />
+            Continue with Google
+          </button>
+
+          {/* Divider */}
+          <div className="flex items-center gap-4 my-7">
+            <div className="flex-1 h-px bg-[#1A1A1A]/10" />
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#1A1A1A]/35">
+              or
+            </span>
+            <div className="flex-1 h-px bg-[#1A1A1A]/10" />
+          </div>
 
           <Form className="flex w-full flex-col gap-6" onSubmit={handleSubmit}>
             {/* Name */}
