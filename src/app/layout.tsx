@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toast } from "@heroui/react";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#F5F0E6]">
          <Toast.Provider  />
         <main>{children}</main>
+        <ChatWidget />
       </body>
     </html>
   );
