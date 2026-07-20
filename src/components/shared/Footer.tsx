@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const SOCIAL_LINKS = [
-  { label: "Facebook", href: "/" },
-  { label: "Github", href: "/" },
-  { label: "Linkedin", href: "/" },
+  { label: "Facebook", href: "https://www.facebook.com/krishnoghosh3000/" },
+  { label: "Github", href: "https://github.com/krisnokumarghosh" },
+  { label: "Linkedin", href: "https://www.linkedin.com/in/krisno-ghosh/" },
 ];
 const COMPANY_LINKS = [
   { label: "About", href: "/about-us" },

@@ -13,7 +13,7 @@ const RecommendedProducts = async () => {
   if (!data || data.length === 0) return null;
 
   return (
-    <section className="bg-[#F5F0E6]   mb-30">
+    <section className="bg-[#F5F0E6] mb-15  md:mb-30">
       <div>
         {/* Heading */}
         <div className="text-center mb-12">

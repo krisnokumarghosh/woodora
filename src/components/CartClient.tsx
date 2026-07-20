@@ -134,9 +134,9 @@ const CartClient = ({ initialItems }: Props) => {
   }
 
   return (
-    <div className="grid lg:grid-cols-3 gap-8 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start w-full min-w-0">
       {/* Cart items */}
-      <div className="lg:col-span-2 flex flex-col gap-4">
+      <div className="lg:col-span-2 flex flex-col gap-4 min-w-0">
         {items.map((item) => {
           const { furniture, quantity } = item;
           const lineTotal = furniture.price * quantity;
@@ -145,12 +145,12 @@ const CartClient = ({ initialItems }: Props) => {
           return (
             <div
               key={item._id}
-              className="flex gap-4 sm:gap-5 bg-white/40 border border-[#1A1A1A]/6 rounded-md p-4 sm:p-5"
+              className="flex gap-3 sm:gap-5 bg-white/40 border border-[#1A1A1A]/6 rounded-md p-3 sm:p-5 min-w-0"
             >
               {/* Image */}
               <Link
                 href={`/furnitures/${furniture._id}`}
-                className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 rounded-md overflow-hidden bg-[#DCD2C3]"
+                className="relative w-20 h-20 sm:w-28 sm:h-28 shrink-0 rounded-md overflow-hidden bg-[#DCD2C3]"
               >
                 <Image
                   src={furniture.image}
@@ -163,17 +163,17 @@ const CartClient = ({ initialItems }: Props) => {
 
               {/* Info */}
               <div className="flex-1 min-w-0 flex flex-col justify-between">
-                <div className="flex items-start justify-between gap-3">
+                <div className="flex items-start justify-between gap-2 sm:gap-3">
                   <div className="min-w-0">
                     <Link href={`/furnitures/${furniture._id}`}>
-                      <h3 className="text-[15px] font-semibold text-[#1A1A1A] leading-snug truncate hover:text-[#A0522D] transition-colors">
+                      <h3 className="text-[13.5px] sm:text-[15px] font-semibold text-[#1A1A1A] leading-snug truncate hover:text-[#A0522D] transition-colors">
                         {furniture.name}
                       </h3>
                     </Link>
-                    <p className="text-[12px] text-[#1A1A1A]/45 mt-0.5">
+                    <p className="text-[11px] sm:text-[12px] text-[#1A1A1A]/45 mt-0.5 truncate">
                       {furniture.category}
                     </p>
-                    <p className="text-[13.5px] font-bold text-[#A0522D] mt-1.5">
+                    <p className="text-[12.5px] sm:text-[13.5px] font-bold text-[#A0522D] mt-1.5">
                       ${furniture.price}
                     </p>
                   </div>
@@ -194,32 +194,32 @@ const CartClient = ({ initialItems }: Props) => {
                 </div>
 
                 {/* Quantity stepper + line total */}
-                <div className="flex items-center justify-between mt-3">
-                  <div className="flex items-center border border-[#1A1A1A]/15 rounded-full">
+                <div className="flex items-center justify-between gap-2 mt-3 flex-wrap">
+                  <div className="flex items-center border border-[#1A1A1A]/15 rounded-full shrink-0">
                     <button
                       type="button"
                       onClick={() => handleDecrement(item._id)}
                       disabled={isRemoving || quantity <= 1}
-                      className="w-8 h-8 flex items-center justify-center text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors disabled:opacity-30"
+                      className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors disabled:opacity-30"
                       aria-label="Decrease quantity"
                     >
                       <Minus className="w-3.5 h-3.5" />
                     </button>
-                    <span className="w-7 text-center text-[13.5px] font-semibold text-[#1A1A1A]">
+                    <span className="min-w-6 text-center text-[13px] sm:text-[13.5px] font-semibold text-[#1A1A1A]">
                       {quantity}
                     </span>
                     <button
                       type="button"
                       onClick={() => handleIncrement(item._id)}
                       disabled={isRemoving}
-                      className="w-8 h-8 flex items-center justify-center text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors disabled:opacity-30"
+                      className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-[#1A1A1A]/60 hover:text-[#1A1A1A] transition-colors disabled:opacity-30"
                       aria-label="Increase quantity"
                     >
                       <Plus className="w-3.5 h-3.5" />
                     </button>
                   </div>
 
-                  <p className="text-[14.5px] font-bold text-[#1A1A1A]">
+                  <p className="text-[13.5px] sm:text-[14.5px] font-bold text-[#1A1A1A] shrink-0">
                     ${lineTotal}
                   </p>
                 </div>
@@ -230,7 +230,7 @@ const CartClient = ({ initialItems }: Props) => {
       </div>
 
       {/* Order summary */}
-      <div className="lg:sticky lg:top-24 bg-white/50 border border-[#1A1A1A]/8 rounded-md p-6">
+      <div className="lg:sticky lg:top-24 bg-white/50 border border-[#1A1A1A]/8 rounded-md p-6 min-w-0">
         <h2 className="text-[13px] font-bold tracking-[0.12em] uppercase text-[#1A1A1A]/50 mb-5">
           Order Summary
         </h2>
