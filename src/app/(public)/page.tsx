@@ -1,4 +1,5 @@
 import Banner from "@/components/homepage/Banner";
+import CtaBanner from "@/components/homepage/CtaBanner";
 import FaqSection from "@/components/homepage/FaqSection";
 import RecommendedProducts from "@/components/homepage/RecommendedProducts";
 import ShopByRoom from "@/components/homepage/ShopByRoom";
@@ -17,6 +18,7 @@ export default function Home() {
     <ShopByRoom/>
     <RecommendedProducts/>
     <FaqSection/>
+    <CtaBanner/>
    </div>
   );
 }
